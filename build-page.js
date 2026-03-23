@@ -417,7 +417,7 @@ for (const sb of storeBrandKeys) {
 // Pass 3: merge groups with same category + overlapping core product across ALL brands
 // For commodity items (potato starch, almond flour, olive oil, etc.) brand doesn't matter
 // Uses subset matching: if core words of one group are a subset of another's, merge them
-const VARIANT_WORDS = /\b(?:white|super|fine|low|carb|free|gluiten|gluten|meal|pure|natural|real|whole|ground|organic|processed|dutch|100|clover|blossom|homogenized)\b/gi;
+const VARIANT_WORDS = /\b(?:white|super|fine|low|carb|free|gluiten|gluten|meal|pure|natural|real|whole|ground|organic|processed|dutch|100|clover|blossom|homogenized|cane|granulated|refined)\b/gi;
 function baseProduct(normTitle) {
   return coreWords(normTitle).replace(VARIANT_WORDS, '').replace(/\s+/g, ' ').trim();
 }
@@ -456,7 +456,7 @@ for (const [key, items] of groupMap) {
   const displayTitle = cleanTitle(rawTitle);
   const category = items[0].category;
 
-  const entries = items.map(item => {
+  let entries = items.map(item => {
     const isWeight = item.size && (item.size.unit === 'oz' || item.size.unit === 'fl oz' || item.size.unit === 'lb' || item.size.unit === 'kg' || item.size.unit === 'ml' || item.size.unit === 'l');
     const isCount = item.size && (item.size.unit === 'ct' || item.size.unit === 'pk');
     let perUnitDisplay = '';
@@ -486,6 +486,19 @@ for (const [key, items] of groupMap) {
       sizeAlert: item.sizeAlert,
     };
   });
+
+  // Deduplicate: keep only the cheapest entry per store (by per-unit cost, then raw price)
+  {
+    const byStore = {};
+    for (const e of entries) {
+      const cost = e.perUnit != null ? e.perUnit :
+                   (e.price != null && e.size && e.size.amount > 0 ? e.price / e.size.amount : e.price);
+      if (!byStore[e.store] || (cost != null && (byStore[e.store].cost == null || cost < byStore[e.store].cost))) {
+        byStore[e.store] = { entry: e, cost };
+      }
+    }
+    entries = Object.values(byStore).map(v => v.entry);
+  }
 
   // Determine winner: lowest per-unit (oz or each), with near-tie tolerance (2%)
   let winner = null;
