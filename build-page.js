@@ -204,7 +204,7 @@ const CATEGORY_RULES = [
   ['Beverages', /\b(juice|seltzer|wine|coke|coffee|tea\b|tea bag|soda|sparkling|beverage|drink|water\b|cocoa mix|hot cocoa)\b/i],
   ['Cereal', /\b(cereal|ringee|cocoa ball|puffer|crispy-o|granola|cheerios|honey comb)\b/i],
   ['Disposables & Paper', /\b(plates?|cups?|tumblers?|bowls?|forks?|spoons?|knives?|knife|teaspoons?|cutlery|flatware|chargers?|combo plate|dinner plate|salad plate|lunch plate|aluminum pan|aluminium|foil\b|parchment|table cover|tablecloth|counter cover|napkins?|trash bag|garbage bag|drawstring bag|sandwich bag|storage bag|ziplock|zip n close|deli container|container combo|bread bag|challah bag|paper towel|counter liner|counter saver)\b/i],
-  ['Household', /\b(tea\s*light|tealight|candle|neronim|match|soap|cleaner|bleach|towel|tissue|wipes?|liner|peeler|shirt|tzitzis|urn|memorial|sponge|gloves?|broom|mop|dish soap|dishwashing|palmolive|windex|murphy|soft scrub|scrub|detergent|laundry|fabric|dryer|air freshener|light bulb|battery|game|seder|haggad|tzitzis|chair)\b/i],
+  ['Household', /\b(candle|neronim|match|soap|cleaner|bleach|towel|tissue|wipes?|liner|peeler|shirt|tzitzis|urn|memorial|sponge|gloves?|broom|mop|dish soap|dishwashing|palmolive|windex|murphy|soft scrub|scrub|detergent|laundry|fabric|dryer|air freshener|light bulb|battery|game|seder|haggad|tzitzis|chair)\b/i],
 ];
 
 const PRODUCE_RE = /\b(apples?|oranges?|potatoes?|onions?|grapes?|lemons?|grapefruit|mango|tomato|peppers?|carrots?|celery|lettuce|cucumbers?|avocado|strawberr|blueberr|raspberr|banana|melon|pineapple|broccoli|cauliflower|spinach|floret|passion fruit)\b/i;
@@ -487,12 +487,18 @@ for (const [key, items] of groupMap) {
     };
   });
 
-  // Deduplicate: keep only the cheapest entry per store (by per-unit cost, then raw price)
+  // Compute comparable unit cost for an entry
+  function unitCostOf(e) {
+    if (e.perUnit != null) return e.perUnit;
+    if (e.price != null && e.size && (e.size.unit === 'ct' || e.size.unit === 'pk') && e.size.amount > 0) return e.price / e.size.amount;
+    return null;
+  }
+
+  // Deduplicate: keep only the cheapest entry per store
   {
     const byStore = {};
     for (const e of entries) {
-      const cost = e.perUnit != null ? e.perUnit :
-                   (e.price != null && e.size && e.size.amount > 0 ? e.price / e.size.amount : e.price);
+      const cost = unitCostOf(e) ?? e.price;
       if (!byStore[e.store] || (cost != null && (byStore[e.store].cost == null || cost < byStore[e.store].cost))) {
         byStore[e.store] = { entry: e, cost };
       }
@@ -503,16 +509,7 @@ for (const [key, items] of groupMap) {
   // Determine winner: lowest per-unit (oz or each), with near-tie tolerance (2%)
   let winner = null;
   if (entries.length > 1) {
-    // Compute comparable unit cost for each entry
-    const withCost = entries.map(e => {
-      let unitCost = null;
-      if (e.perUnit != null) {
-        unitCost = e.perUnit; // per-oz
-      } else if (e.price != null && e.size && (e.size.unit === 'ct' || e.size.unit === 'pk') && e.size.amount > 0) {
-        unitCost = e.price / e.size.amount; // per-each
-      }
-      return { ...e, unitCost };
-    }).filter(e => e.unitCost != null);
+    const withCost = entries.map(e => ({ ...e, unitCost: unitCostOf(e) })).filter(e => e.unitCost != null);
 
     if (withCost.length > 1) {
       const sorted = [...withCost].sort((a, b) => a.unitCost - b.unitCost);
@@ -753,8 +750,6 @@ ${rowsHTML}
   </div>
 </div>`;
   }).join('\n');
-
-  // Sale date cards (removed)
 
   // Store filter buttons
   const storeFilterBtns = Object.entries(STORES).map(([id, s]) =>
@@ -1496,10 +1491,11 @@ async function submitContact() {
       throw new Error('Server error');
     }
   } catch (e) {
+    console.error('Contact form error:', e);
     msg.textContent = 'Failed to send. Please try again.';
     msg.style.color = '#dc2626';
+    btn.disabled = false;
   }
-  btn.disabled = false;
 }
 </script>
 </body>

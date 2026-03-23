@@ -21,7 +21,6 @@ export async function onRequestPost(context) {
       message: message.trim(),
       type: type || 'general', // general, price-correction, suggestion
       timestamp: new Date().toISOString(),
-      ip: request.headers.get('CF-Connecting-IP') || '',
     };
 
     // Store in KV with timestamp key
