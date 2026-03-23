@@ -140,10 +140,13 @@ const BRAND_NAMES = [
 ];
 const BRAND_RE = new RegExp('\\b(' + BRAND_NAMES.map(b => b.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') + ')\\b', 'gi');
 
-const FILLER_WORDS = /\b(?:farms|collection|natural|premium|original|classic|deluxe|style|brand|fancy|select|quality|fine|fresh|homestyle|home\s*style|traditional|extra|special|new|great|value|with|and|the|in|of|for)\b/gi;
+const FILLER_WORDS = /\b(?:farms|collection|natural|premium|original|classic|deluxe|style|brand|fancy|select|quality|fine|fresh|homestyle|home\s*style|traditional|extra|special|new|great|value|with|and|the|in|of|for|family|pack|case|assorted|cup|hour|hours)\b/gi;
 
 function normalizeForMatch(title) {
   let s = (title || '').toLowerCase();
+  // Normalize smart quotes to straight apostrophe
+  s = s.replace(/[\u2018\u2019\u201A\u02BC\u02BB]/g, "'");
+  s = s.replace(/[\u201C\u201D\u201E]/g, '"');
   // Remove size/weight text
   s = s.replace(/\d+(?:\.\d+)?\s*(?:fl\.?\s*oz|oz|lb|lbs|kg|ml|l|ct|cnt|pk|sq\.?\s*ft|count|pack)\b/gi, '');
   // Remove common descriptors
@@ -201,7 +204,7 @@ const CATEGORY_RULES = [
   ['Beverages', /\b(juice|seltzer|wine|coke|coffee|tea\b|tea bag|soda|sparkling|beverage|drink|water\b|cocoa mix|hot cocoa)\b/i],
   ['Cereal', /\b(cereal|ringee|cocoa ball|puffer|crispy-o|granola|cheerios|honey comb)\b/i],
   ['Disposables & Paper', /\b(plates?|cups?|tumblers?|bowls?|forks?|spoons?|knives?|knife|teaspoons?|cutlery|flatware|chargers?|combo plate|dinner plate|salad plate|lunch plate|aluminum pan|aluminium|foil\b|parchment|table cover|tablecloth|counter cover|napkins?|trash bag|garbage bag|drawstring bag|sandwich bag|storage bag|ziplock|zip n close|deli container|container combo|bread bag|challah bag|paper towel|counter liner|counter saver)\b/i],
-  ['Household', /\b(candle|neronim|match|soap|cleaner|bleach|towel|tissue|wipes?|liner|peeler|shirt|tzitzis|urn|memorial|sponge|gloves?|broom|mop|dish soap|dishwashing|palmolive|windex|murphy|soft scrub|scrub|detergent|laundry|fabric|dryer|air freshener|light bulb|battery|game|seder|haggad|tzitzis|chair)\b/i],
+  ['Household', /\b(tea\s*light|tealight|candle|neronim|match|soap|cleaner|bleach|towel|tissue|wipes?|liner|peeler|shirt|tzitzis|urn|memorial|sponge|gloves?|broom|mop|dish soap|dishwashing|palmolive|windex|murphy|soft scrub|scrub|detergent|laundry|fabric|dryer|air freshener|light bulb|battery|game|seder|haggad|tzitzis|chair)\b/i],
 ];
 
 const PRODUCE_RE = /\b(apples?|oranges?|potatoes?|onions?|grapes?|lemons?|grapefruit|mango|tomato|peppers?|carrots?|celery|lettuce|cucumbers?|avocado|strawberr|blueberr|raspberr|banana|melon|pineapple|broccoli|cauliflower|spinach|floret|passion fruit)\b/i;
@@ -210,6 +213,8 @@ const SNACK_STICK_RE = /\b(potato\s+stick)\b/i;
 
 function categorize(title) {
   const t = title || '';
+  // Tea lights → Household (before Beverages catches "tea")
+  if (/\btea\s*light/i.test(t) || /\btealight/i.test(t)) return 'Household';
   // Snack sticks override
   if (SNACK_STICK_RE.test(t)) return 'Snacks & Chips';
   // Aluminum pans → Disposables
