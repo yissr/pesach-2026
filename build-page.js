@@ -451,9 +451,6 @@ for (const [target, sources] of keysToMerge) {
 
 const groups = [];
 for (const [key, items] of groupMap) {
-  // Pick display title: longest title in the group, cleaned
-  const rawTitle = items.reduce((a, b) => a.title.length >= b.title.length ? a : b).title;
-  const displayTitle = cleanTitle(rawTitle);
   const category = items[0].category;
 
   let entries = items.map(item => {
@@ -505,6 +502,10 @@ for (const [key, items] of groupMap) {
     }
     entries = Object.values(byStore).map(v => v.entry);
   }
+
+  // Pick display title from deduped entries: longest title
+  const rawTitle = entries.reduce((a, b) => a.title.length >= b.title.length ? a : b).title;
+  const displayTitle = cleanTitle(rawTitle);
 
   // Determine winner: lowest per-unit (oz or each), with near-tie tolerance (2%)
   let winner = null;
