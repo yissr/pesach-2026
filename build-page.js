@@ -930,6 +930,45 @@ body {
 }
 .comp-note.alert { color: #d97706; }
 
+/* Contact FAB */
+.contact-btn {
+  position: fixed; bottom: 20px; left: 20px; z-index: 1000;
+  background: linear-gradient(135deg, #6366f1, #4f46e5); color: white;
+  border: none; border-radius: 50px; padding: 12px 20px;
+  font-size: 14px; font-weight: 700; cursor: pointer;
+  box-shadow: 0 4px 16px rgba(99,102,241,0.4);
+  display: flex; align-items: center; gap: 8px;
+  transition: transform 0.15s; font-family: inherit;
+}
+.contact-btn:hover { transform: scale(1.05); }
+.contact-modal {
+  display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 2001; align-items: center; justify-content: center;
+  background: rgba(0,0,0,0.5); padding: 16px;
+}
+.contact-modal.open { display: flex; }
+.contact-form {
+  background: white; border-radius: 16px; padding: 24px;
+  max-width: 440px; width: 100%; box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+}
+.contact-form h3 { margin-bottom: 16px; font-size: 18px; }
+.contact-form label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 4px; color: #374151; }
+.contact-form input, .contact-form textarea, .contact-form select {
+  width: 100%; padding: 10px 12px; border: 1.5px solid #d1d5db; border-radius: 8px;
+  font-size: 14px; font-family: inherit; margin-bottom: 12px;
+}
+.contact-form textarea { min-height: 100px; resize: vertical; }
+.contact-form select { appearance: auto; }
+.contact-form .cf-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 8px; }
+.contact-form button {
+  padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 600;
+  cursor: pointer; font-family: inherit; border: none;
+}
+.contact-form .cf-cancel { background: #f3f4f6; color: #374151; }
+.contact-form .cf-submit { background: #4f46e5; color: white; }
+.contact-form .cf-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+.contact-form .cf-msg { font-size: 13px; margin-top: 8px; text-align: center; }
+
 /* Cart FAB */
 .cart-btn {
   position: fixed; bottom: 20px; right: 20px; z-index: 1000;
@@ -1107,6 +1146,33 @@ ${categoryTablesHTML}
   \u26A0\uFE0F items show per-unit breakdowns \u00B7 Click rows with multiple stores to compare \u00B7 "\u2014" = not in that store's circular
 </div>
 
+</div>
+
+<button class="contact-btn" onclick="document.getElementById('contactModal').classList.add('open')">
+  \u2709\uFE0F Contact / Submit
+</button>
+
+<div class="contact-modal" id="contactModal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="contact-form">
+    <h3>\u2709\uFE0F Contact Us</h3>
+    <label>Type</label>
+    <select id="cfType">
+      <option value="price-correction">Price Correction</option>
+      <option value="suggestion">Item Suggestion</option>
+      <option value="general" selected>General Feedback</option>
+    </select>
+    <label>Name (optional)</label>
+    <input id="cfName" type="text" placeholder="Your name">
+    <label>Email (optional)</label>
+    <input id="cfEmail" type="email" placeholder="your@email.com">
+    <label>Message *</label>
+    <textarea id="cfMessage" placeholder="Tell us about a price error, suggest an item, or share feedback..."></textarea>
+    <div class="cf-actions">
+      <button class="cf-cancel" onclick="document.getElementById('contactModal').classList.remove('open')">Cancel</button>
+      <button class="cf-submit" id="cfSubmit" onclick="submitContact()">Send</button>
+    </div>
+    <div class="cf-msg" id="cfMsg"></div>
+  </div>
 </div>
 
 <button class="cart-btn" id="cartBtn" onclick="openCart()">
@@ -1399,6 +1465,42 @@ function initCart() {
   updateCartUI();
 }
 initCart();
+
+async function submitContact() {
+  const btn = document.getElementById('cfSubmit');
+  const msg = document.getElementById('cfMsg');
+  const message = document.getElementById('cfMessage').value.trim();
+  if (!message) { msg.textContent = 'Please enter a message.'; msg.style.color = '#dc2626'; return; }
+  btn.disabled = true;
+  msg.textContent = 'Sending...';
+  msg.style.color = '#6366f1';
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        type: document.getElementById('cfType').value,
+        name: document.getElementById('cfName').value,
+        email: document.getElementById('cfEmail').value,
+        message: message,
+      }),
+    });
+    if (res.ok) {
+      msg.textContent = 'Thank you! Your submission has been received.';
+      msg.style.color = '#16a34a';
+      document.getElementById('cfMessage').value = '';
+      document.getElementById('cfName').value = '';
+      document.getElementById('cfEmail').value = '';
+      setTimeout(() => document.getElementById('contactModal').classList.remove('open'), 2000);
+    } else {
+      throw new Error('Server error');
+    }
+  } catch (e) {
+    msg.textContent = 'Failed to send. Please try again.';
+    msg.style.color = '#dc2626';
+  }
+  btn.disabled = false;
+}
 </script>
 </body>
 </html>`;
