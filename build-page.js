@@ -1102,7 +1102,7 @@ body {
 </div>
 
 <div class="disclaimer">
-  <strong>\u26A0\uFE0F Important:</strong> This page compares <strong>sale/promotional prices only</strong> \u2014 not everyday shelf prices. Stores like NPGS and Bingo tend to have lower everyday prices across the board, while GG often has deeper sale discounts. Occasionally one store will beat the others on a particular item. <strong>Always compare the full cost of your shopping list, not just individual sale items.</strong>
+  <strong>\u26A0\uFE0F Important:</strong> This page compares <strong>sale/promotional prices only</strong> \u2014 not everyday shelf prices. Stores like NPGS and Bingo tend to have lower everyday prices across the board, while GG often has deeper sale discounts. Occasionally one store will beat the others on a particular item. <strong>Use the shopping list feature to build your list and see which store is cheapest for each item.</strong>
   <br><br>
   Prices and availability may vary. Data was scraped from store flyers and may contain errors. Always verify in-store. Last updated: ${new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}.
 </div>
