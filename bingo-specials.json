@@ -1,0 +1,776 @@
+[
+  {
+    "category": "Matzah",
+    "title": "Jerusalem Matzah 5 LB",
+    "priceDescription": "$6.99 · Jerusalem · 5×1 LB",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Matzah",
+    "title": "Hand Shmura Matzah",
+    "priceDescription": "$13.99/lb · Mehuderet 1 LB",
+    "winner": "bingo",
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Matzah",
+    "title": "Hand Shmura Matzah, Thin",
+    "priceDescription": "$21.99/lb · Mehuderet 2 LB",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Matzah",
+    "title": "Heimishe Matzah / USA",
+    "priceDescription": "$24.99/lb · Heimish 2 LB",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Fish",
+    "title": "Side of Salmon",
+    "priceDescription": "$6.99/lb",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Meat & Poultry",
+    "title": "Chicken Legs",
+    "priceDescription": "$1.99/lb",
+    "winner": "bingo",
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Meat & Poultry",
+    "title": "Chicken Drumsticks",
+    "priceDescription": "$1.99/lb",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Meat & Poultry",
+    "title": "Chicken Bones",
+    "priceDescription": "$0.89/lb",
+    "winner": "bingo",
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Meat & Poultry",
+    "title": "Premium Whole Brisket",
+    "priceDescription": "$6.99/lb",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Meat & Poultry",
+    "title": "Premium 1st Cut Brisket",
+    "priceDescription": "$7.99/lb",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Meat & Poultry",
+    "title": "Premium Silver Tip Roast",
+    "priceDescription": "$6.99/lb",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Meat & Poultry",
+    "title": "Chuck London Broil / Shabbos Meat",
+    "priceDescription": "$9.99/lb · Premium Chuck",
+    "winner": "bingo",
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Meat & Poultry",
+    "title": "Boneless Flanken Roast",
+    "priceDescription": "$13.99/lb",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Produce",
+    "title": "Idaho Potatoes ~50 lb",
+    "priceDescription": "$19.99 · 50 LB loose",
+    "winner": "gg",
+    "perOz": null,
+    "note": "Same 50 lb total weight — GG is $5 cheaper",
+    "sizeAlert": false
+  },
+  {
+    "category": "Produce",
+    "title": "Onions",
+    "priceDescription": "$3.89 · 10 LB bag (≈39¢/lb)",
+    "winner": "bingo",
+    "perOz": "Bingo 39¢/lb vs GG 49¢/lb",
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Produce",
+    "title": "Oranges (case)",
+    "priceDescription": "$28.99 · Juice Oranges 40 LB",
+    "winner": "bingo",
+    "perOz": null,
+    "note": "Different varieties — juice vs navel",
+    "sizeAlert": false
+  },
+  {
+    "category": "Produce",
+    "title": "Case: Cortland Apples",
+    "priceDescription": "$34.99 · 80 CT",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Produce",
+    "title": "Case: Lemons",
+    "priceDescription": "$21.99 · 40 LB",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Oils",
+    "title": "Extra Light Olive Oil ~1L",
+    "priceDescription": "$5.99 · Blupantry 33.8 oz",
+    "winner": "bingo",
+    "perOz": "Bingo 17.7¢/oz vs GG 23.6¢/oz",
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Oils",
+    "title": "Walnut Oil 96 oz",
+    "priceDescription": "$13.99 · Blupantry",
+    "winner": "bingo",
+    "perOz": "Bingo 14.6¢/oz vs GG 15.6¢/oz",
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Oils",
+    "title": "Cottonseed Oil 96 oz",
+    "priceDescription": "$6.99 · Blupantry",
+    "winner": "bingo",
+    "perOz": "Bingo 7.3¢/oz vs GG 8.2¢/oz",
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Baking & Pantry",
+    "title": "Potato Starch (large)",
+    "priceDescription": "$1.59 · Blupantry 35.27 oz (1 KG)",
+    "winner": "bingo",
+    "perOz": "Bingo 4.5¢/oz vs GG 10.4¢/oz — Bingo is 47% MORE product at 57% LESS per ounce",
+    "note": null,
+    "sizeAlert": true
+  },
+  {
+    "category": "Baking & Pantry",
+    "title": "Potato Starch (small)",
+    "priceDescription": "$2.29 · Blupantry 21 oz",
+    "winner": "gg",
+    "perOz": "GG 6.2¢/oz vs Bingo 10.9¢/oz — but Bingo's 1 KG pouch above beats both at 4.5¢/oz",
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Baking & Pantry",
+    "title": "Almond Flour ~2 lb",
+    "priceDescription": "$8.99 · Blupantry 32 oz",
+    "winner": "bingo",
+    "perOz": "Bingo 28.1¢/oz vs GG 31.2¢/oz",
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Baking & Pantry",
+    "title": "Sugar (4 lb)",
+    "priceDescription": "$2.87 ea · Blupantry 4×4 LB = $11.49",
+    "winner": "bingo",
+    "perOz": "Bingo 4.5¢/oz vs GG 5.5¢/oz — Bingo's bulk 4-pack saves 18% per ounce",
+    "note": null,
+    "sizeAlert": true
+  },
+  {
+    "category": "Baking & Pantry",
+    "title": "Chocolate Chips",
+    "priceDescription": "$5.49 · Lieber's 16 oz",
+    "winner": "gg",
+    "perOz": "GG 33.2¢/oz vs Bingo 34.3¢/oz — GG is slightly cheaper per ounce",
+    "note": "⚠️ GG's pack is almost HALF the size (9 oz vs 16 oz). You'll need to buy nearly 2 GG packs to match 1 Bingo pack. Per ounce GG edges it out, but if you need volume, keep that in mind.",
+    "sizeAlert": true
+  },
+  {
+    "category": "Baking & Pantry",
+    "title": "Honey",
+    "priceDescription": "$4.99 · Bingo 35.2 oz (2.2 LB)",
+    "winner": "bingo",
+    "perOz": "Bingo 14.2¢/oz vs GG 15.6¢/oz — same price but Bingo gives 3.2 oz more",
+    "note": null,
+    "sizeAlert": true
+  },
+  {
+    "category": "Baking & Pantry",
+    "title": "Premium Cocoa 16 oz",
+    "priceDescription": "$6.99 · Blupantry",
+    "winner": "bingo",
+    "perOz": "Bingo 43.7¢/oz vs GG 49.9¢/oz",
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Baking & Pantry",
+    "title": "Mayonnaise 30 oz",
+    "priceDescription": "$3.89 · Blupantry",
+    "winner": "bingo",
+    "perOz": "Bingo 13.0¢/oz vs GG 13.3¢/oz",
+    "note": "GG also has Gefen at $4.49 — matched against Bingo's Lite Mayo below",
+    "sizeAlert": false
+  },
+  {
+    "category": "Baking & Pantry",
+    "title": "Lite Mayonnaise 30 oz",
+    "priceDescription": "$3.89 · Blupantry",
+    "winner": "bingo",
+    "perOz": "Bingo 13.0¢/oz vs GG 15.0¢/oz",
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Baking & Pantry",
+    "title": "Table Salt 26 oz",
+    "priceDescription": "2/$1.49 (75¢ ea) · Blupantry",
+    "winner": "bingo",
+    "perOz": "Bingo 2.9¢/oz vs GG 3.8¢/oz",
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Baking & Pantry",
+    "title": "Mushrooms 8 oz",
+    "priceDescription": "$1.59 · Blupantry S&P",
+    "winner": "gg",
+    "perOz": "GG 16.6¢/oz vs Bingo 19.9¢/oz",
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Baking & Pantry",
+    "title": "Taster's Choice Coffee 7 oz",
+    "priceDescription": "$10.49 · Nescafe",
+    "winner": "tie",
+    "perOz": "Identical: $1.50/oz",
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Baking & Pantry",
+    "title": "Whole Hearts of Palm",
+    "priceDescription": "$5.99 · Blupantry 42 oz (3 PK)",
+    "winner": "tie",
+    "perOz": "Bingo = $2.00 per 14 oz vs GG $1.99–2.19 per 14 oz — essentially the same per ounce. Sticker price differs only because Bingo sells a 3-pack.",
+    "note": null,
+    "sizeAlert": true
+  },
+  {
+    "category": "Baking & Pantry",
+    "title": "Garlic Powder",
+    "priceDescription": "$5.99 · Blupantry 20 oz",
+    "winner": "bingo",
+    "perOz": "Bingo 30.0¢/oz vs GG 31.2¢/oz — GG has a lower sticker price but Bingo's bigger jar is actually cheaper per ounce",
+    "note": null,
+    "sizeAlert": true
+  },
+  {
+    "category": "Baking & Pantry",
+    "title": "Fancy Paprika",
+    "priceDescription": "$4.99 · Blupantry 16 oz",
+    "winner": "bingo",
+    "perOz": "Bingo 31.2¢/oz vs GG 35.6¢/oz — same price but Bingo gives 2 oz more",
+    "note": null,
+    "sizeAlert": true
+  },
+  {
+    "category": "Baking & Pantry",
+    "title": "Black Pepper",
+    "priceDescription": "$6.29 · Blupantry 14 oz",
+    "winner": "gg",
+    "perOz": "GG 37.4¢/oz vs Bingo 44.9¢/oz — GG is cheaper AND bigger",
+    "note": null,
+    "sizeAlert": true
+  },
+  {
+    "category": "Baking & Pantry",
+    "title": "Green Pitted Olives 29 oz",
+    "priceDescription": "2/$7.49 · Bnei Darom",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Baking & Pantry",
+    "title": "Cucumbers in Brine Lg 7–9",
+    "priceDescription": "2/$4.00 · Beit Hashita 19.75 oz",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Sweets & Snacks",
+    "title": "Baby Fingers ~1.5 lb",
+    "priceDescription": "$8.79 · Blupantry 24 oz",
+    "winner": "bingo",
+    "perOz": "Bingo 36.6¢/oz vs GG 37.5–41.6¢/oz",
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Sweets & Snacks",
+    "title": "Chocolate Chip Cookies 24 oz",
+    "priceDescription": "$9.99 · Blupantry",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Sweets & Snacks",
+    "title": "Chocolate Bars Assorted 3.5 oz",
+    "priceDescription": "3/$10 · Schmerling",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Beverages",
+    "title": "Kedem Grape Juice 6×50.7 oz (glass)",
+    "priceDescription": "$27.99/case",
+    "winner": "tie",
+    "perOz": "Identical: 9.2¢/oz",
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Beverages",
+    "title": "Kedem Light Grape Juice 6×50.7 oz",
+    "priceDescription": "$27.99/case",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Beverages",
+    "title": "Kedem Grape Juice 6×96 oz",
+    "priceDescription": "$31.99/case",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Beverages",
+    "title": "Kedem Light Grape Juice 6×96 oz",
+    "priceDescription": "$31.99/case",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Beverages",
+    "title": "Sparkling Grape Juice 3 PK",
+    "priceDescription": "$8.49 · Kedem 25.4 oz",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Beverages",
+    "title": "Seltzer (case of 12)",
+    "priceDescription": "$4.99 · Blupantry CS/12",
+    "winner": "bingo",
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Household",
+    "title": "White Corrugated Counter Top 2'×6'",
+    "priceDescription": "$5.99",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Household",
+    "title": "Clear Round Dining Chairs",
+    "priceDescription": "$29.99 · Bingo",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Household",
+    "title": "Wool Tzitzis Size 18–28",
+    "priceDescription": "$17.99",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Household",
+    "title": "White Shirts, Men 15–18.5",
+    "priceDescription": "$15.99 · Belston",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Household",
+    "title": "White Shirts, Boys 10–18",
+    "priceDescription": "$15.99 · Belston",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Household",
+    "title": "Stainless Steel Urn 5.8 QT",
+    "priceDescription": "$59.99 · Blutago",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Household",
+    "title": "Pizza Maker",
+    "priceDescription": "$23.99 · Betty Crocker",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Household",
+    "title": "Tea Lights",
+    "priceDescription": "$7.99 · 200 PK",
+    "winner": "tie",
+    "perOz": "Bingo 4.0¢/light vs GG 4.0¢/light — identical per light. 4 GG packs = 200 lights for $7.96 vs Bingo's $7.99 for 200.",
+    "note": null,
+    "sizeAlert": true
+  },
+  {
+    "category": "Disposables & Foil",
+    "title": "Aluminum Foil (200 ft)",
+    "priceDescription": "$14.99 · Blushine 200 FT × 2 PK (400 ft total)",
+    "winner": "bingo",
+    "perOz": "Bingo = $7.50 per 200 ft roll (2-pack) vs GG up to $5.49 for single 200 sqft — Bingo better per foot if you need 2+ rolls",
+    "note": "Bingo is a 2-pack; if you only need 1 roll, GG is cheaper",
+    "sizeAlert": true
+  },
+  {
+    "category": "Disposables & Foil",
+    "title": "Case: 7 OZ Plastic Cups 1200 CT",
+    "priceDescription": "$6.79",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Disposables & Foil",
+    "title": "Case: 12 OZ Bowls 800 CT",
+    "priceDescription": "$11.99",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Disposables & Foil",
+    "title": "Case: Forks 1000 CT",
+    "priceDescription": "$5.79 · Plastx",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Disposables & Foil",
+    "title": "Case: Knives 1000 CT",
+    "priceDescription": "$5.79 · Plastx",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Disposables & Foil",
+    "title": "Case: Spoons 1000 CT",
+    "priceDescription": "$5.79 · Plastx",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Disposables & Foil",
+    "title": "Case: Teaspoons 1000 CT",
+    "priceDescription": "$5.79 · Plastx",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Disposables & Foil",
+    "title": "Case: 6\" Plates 800 CT",
+    "priceDescription": "$10.49",
+    "winner": "tie",
+    "perOz": "GG ranges from $9.99–12.99 for 800 CT — at $9.99 GG wins, at $12.99 Bingo wins. Call it a wash.",
+    "note": null,
+    "sizeAlert": true
+  },
+  {
+    "category": "Disposables & Foil",
+    "title": "Case: 9\" Plates 400 CT",
+    "priceDescription": "$8.99",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Disposables & Foil",
+    "title": "Deli Containers 16 OZ 36 CT",
+    "priceDescription": "$3.99 · Blushine",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Disposables & Foil",
+    "title": "Deli Containers 32 OZ 24 CT",
+    "priceDescription": "$3.99 · Blushine",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Disposables & Foil",
+    "title": "5 & 12 OZ Combo Bowl 32 CT",
+    "priceDescription": "$4.99 · Blushine",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Disposables & Foil",
+    "title": "7 & 10\" Combo Plate 32 CT",
+    "priceDescription": "$5.99 · Blushine",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Disposables & Foil",
+    "title": "54\" Tablecloths 64 CT",
+    "priceDescription": "$19.99 · Blushine",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Disposables & Foil",
+    "title": "72\" Tablecloths 48 CT",
+    "priceDescription": "$19.99 · Blushine",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Disposables & Foil",
+    "title": "90\" Tablecloths 40 CT",
+    "priceDescription": "$19.99 · Blushine",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Disposables & Foil",
+    "title": "108\" Tablecloths 32 CT",
+    "priceDescription": "$19.99 · Blushine",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Disposables & Foil",
+    "title": "120\" Tablecloths 28 CT",
+    "priceDescription": "$19.99 · Blushine",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Disposables & Foil",
+    "title": "140\" Tablecloths 24 CT",
+    "priceDescription": "$19.99 · Blushine",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Disposables & Foil",
+    "title": "160\" Tablecloths 20 CT",
+    "priceDescription": "$19.99 · Blushine",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Disposables & Foil",
+    "title": "Drawstring Trash Bags 13 GAL 150 CT",
+    "priceDescription": "$11.99 · Blushine",
+    "winner": "bingo",
+    "perOz": "Bingo 8.0¢/bag vs GG 9.3¢/bag",
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Disposables & Foil",
+    "title": "Drawstring Trash Bags 30 GAL 90 CT",
+    "priceDescription": "$11.99 · Blushine",
+    "winner": "bingo",
+    "perOz": "Bingo 13.3¢/bag vs GG 15.5¢/bag",
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Disposables & Foil",
+    "title": "Baby Wipes",
+    "priceDescription": "$4.99 · Blushine 400 CT",
+    "winner": "tie",
+    "perOz": "Bingo 1.25¢/wipe vs GG 1.25¢/wipe — identical per wipe despite different counts",
+    "note": null,
+    "sizeAlert": true
+  },
+  {
+    "category": "Disposables & Foil",
+    "title": "Basic Cutlery (per piece)",
+    "priceDescription": "$5.79/1000 CT · Plastx (forks, knives, spoons, teaspoons)",
+    "winner": "gg",
+    "perOz": "GG 0.50¢/piece vs Bingo 0.58¢/piece — GG is ~14% cheaper per piece, but Bingo sells in larger 1000-count cases",
+    "note": null,
+    "sizeAlert": true
+  },
+  {
+    "category": "Cleaning Supplies",
+    "title": "Well Done Oven Cleaner 25 oz",
+    "priceDescription": "$2.99 · St. Moritz",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Cleaning Supplies",
+    "title": "Well Done Oven Cleaner Fume Free 25 oz",
+    "priceDescription": "$2.99 · St. Moritz",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Cleaning Supplies",
+    "title": "Dish Soap / Dishwashing Liquid",
+    "priceDescription": "$1.99 · Blushine 1.5 LT (50.7 oz)",
+    "winner": "tie",
+    "perOz": "Bingo 3.9¢/oz vs GG 4.0¢/oz — virtually identical per ounce. GG's sticker is half the price but it's half the bottle.",
+    "note": null,
+    "sizeAlert": true
+  },
+  {
+    "category": "Cleaning Supplies",
+    "title": "Super Shine 32 oz",
+    "priceDescription": "$1.79 · Blushine",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Cleaning Supplies",
+    "title": "Super Clean 128 oz",
+    "priceDescription": "$5.79 · Blushine",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Cleaning Supplies",
+    "title": "Super Sheen 128 oz",
+    "priceDescription": "$7.99 · Blushine",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  }
+]

@@ -1,0 +1,20 @@
+node_modules/
+build-debug.js
+debug-page.html
+debug-screenshot.png
+debug-stores.png
+debug-text.txt
+*.zip
+
+# Temp/debug scripts
+check-*.js
+test-norm*.js
+compare-*.js
+list-bingo-solo.js
+add-gg-*.js
+dedup-gg.js
+convert-*.js
+extract-bingo.js
+
+# Generated output (built by Cloudflare)
+index.html
