@@ -2,7 +2,7 @@
   {
     "category": "Matzah",
     "title": "Jerusalem Matzah 5 LB",
-    "priceDescription": "$6.99 · Jerusalem · 5×1 LB",
+    "priceDescription": "$7.99 · Jerusalem 5×1 LB",
     "winner": null,
     "perOz": null,
     "note": null,
@@ -11,16 +11,7 @@
   {
     "category": "Matzah",
     "title": "Hand Shmura Matzah",
-    "priceDescription": "$13.99/lb · Mehuderet 1 LB",
-    "winner": "bingo",
-    "perOz": null,
-    "note": null,
-    "sizeAlert": false
-  },
-  {
-    "category": "Matzah",
-    "title": "Hand Shmura Matzah, Thin",
-    "priceDescription": "$21.99/lb · Mehuderet 2 LB",
+    "priceDescription": "$14.99/lb · Mehuderet 1 LB",
     "winner": null,
     "perOz": null,
     "note": null,
@@ -28,8 +19,53 @@
   },
   {
     "category": "Matzah",
-    "title": "Heimishe Matzah / USA",
-    "priceDescription": "$24.99/lb · Heimish 2 LB",
+    "title": "Hand Shmura Matzah, Thin",
+    "priceDescription": "$44.99 · Mehuderet 2 LB",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Matzah",
+    "title": "Heimishe Matzah/Whole Wheat",
+    "priceDescription": "$24.99 · Birkat Hapesach 2 LB",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Matzah",
+    "title": "Heimishe Matzah/USA",
+    "priceDescription": "$51.99 · Blupantry 2 LB",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Matzah",
+    "title": "Hand Shmura Matzah Meal",
+    "priceDescription": "$16.99 · Blupantry 1 LB",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Matzah",
+    "title": "Halperin 18 Minute Matzah",
+    "priceDescription": "$3.49 · Jerusalem 16 oz",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Matzah",
+    "title": "Halperin Shmura Matzah",
+    "priceDescription": "$5.99 · Jerusalem 16 oz",
     "winner": null,
     "perOz": null,
     "note": null,
@@ -117,6 +153,42 @@
     "sizeAlert": false
   },
   {
+    "category": "Meat & Poultry",
+    "title": "Sliced Beef Pastrami (KJ)",
+    "priceDescription": "$7.49 · KJ 6 oz",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Meat & Poultry",
+    "title": "Sliced Turkey Pastrami (KJ)",
+    "priceDescription": "$5.99 · KJ 6 oz",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Meat & Poultry",
+    "title": "Sliced Beef Pastrami (Aaron's)",
+    "priceDescription": "$5.79 · Aaron's 6 oz",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Meat & Poultry",
+    "title": "Classic Franks Family Pack",
+    "priceDescription": "$8.99 · Aaron's 24 oz",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
     "category": "Produce",
     "title": "Idaho Potatoes ~50 lb",
     "priceDescription": "$19.99 · 50 LB loose",
@@ -162,6 +234,60 @@
     "sizeAlert": false
   },
   {
+    "category": "Produce",
+    "title": "Carrots",
+    "priceDescription": "$3.99 · 5 LB bag",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Produce",
+    "title": "Sweet Potatoes",
+    "priceDescription": "$0.79/lb",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Produce",
+    "title": "Romaine Hearts",
+    "priceDescription": "$5.99 · 2 Pack",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Produce",
+    "title": "Clementines",
+    "priceDescription": "$4.99/bag",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Produce",
+    "title": "Pineapple",
+    "priceDescription": "2/$4.99 · Del Monte",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Produce",
+    "title": "Avocado",
+    "priceDescription": "$2.79/bag",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
     "category": "Oils",
     "title": "Extra Light Olive Oil ~1L",
     "priceDescription": "$5.99 · Blupantry 33.8 oz",
@@ -189,6 +315,15 @@
     "sizeAlert": false
   },
   {
+    "category": "Oils",
+    "title": "Avocado Oil",
+    "priceDescription": "$14.99 · Blupantry 2 LT",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
     "category": "Baking & Pantry",
     "title": "Potato Starch (large)",
     "priceDescription": "$1.59 · Blupantry 35.27 oz (1 KG)",
@@ -209,9 +344,9 @@
   {
     "category": "Baking & Pantry",
     "title": "Almond Flour ~2 lb",
-    "priceDescription": "$8.99 · Blupantry 32 oz",
-    "winner": "bingo",
-    "perOz": "Bingo 28.1¢/oz vs GG 31.2¢/oz",
+    "priceDescription": "$9.49 · Blupantry 2 LB",
+    "winner": null,
+    "perOz": null,
     "note": null,
     "sizeAlert": false
   },
@@ -236,18 +371,18 @@
   {
     "category": "Baking & Pantry",
     "title": "Honey",
-    "priceDescription": "$4.99 · Bingo 35.2 oz (2.2 LB)",
-    "winner": "bingo",
-    "perOz": "Bingo 14.2¢/oz vs GG 15.6¢/oz — same price but Bingo gives 3.2 oz more",
+    "priceDescription": "$10.99 · Bingo 5 LB",
+    "winner": null,
+    "perOz": null,
     "note": null,
-    "sizeAlert": true
+    "sizeAlert": false
   },
   {
     "category": "Baking & Pantry",
     "title": "Premium Cocoa 16 oz",
-    "priceDescription": "$6.99 · Blupantry",
-    "winner": "bingo",
-    "perOz": "Bingo 43.7¢/oz vs GG 49.9¢/oz",
+    "priceDescription": "$7.49 · Blupantry 16 oz",
+    "winner": null,
+    "perOz": null,
     "note": null,
     "sizeAlert": false
   },
@@ -343,8 +478,8 @@
   },
   {
     "category": "Baking & Pantry",
-    "title": "Cucumbers in Brine Lg 7–9",
-    "priceDescription": "2/$4.00 · Beit Hashita 19.75 oz",
+    "title": "Cucumber In Brine (Large 10-13)",
+    "priceDescription": "2/$5.00 · Bnei Darom 29 oz",
     "winner": null,
     "perOz": null,
     "note": null,
@@ -372,6 +507,33 @@
     "category": "Sweets & Snacks",
     "title": "Chocolate Bars Assorted 3.5 oz",
     "priceDescription": "3/$10 · Schmerling",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Sweets & Snacks",
+    "title": "Assorted Cookies",
+    "priceDescription": "$7.99 · Blupantry 12 oz",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Sweets & Snacks",
+    "title": "Chocolate Roll Cake",
+    "priceDescription": "$8.99 · Blupantry 18 oz",
+    "winner": null,
+    "perOz": null,
+    "note": null,
+    "sizeAlert": false
+  },
+  {
+    "category": "Sweets & Snacks",
+    "title": "Rainbow Cookies",
+    "priceDescription": "$8.99 · Blupantry 12 oz",
     "winner": null,
     "perOz": null,
     "note": null,
