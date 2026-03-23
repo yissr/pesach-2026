@@ -594,15 +594,6 @@ for (const [key, items] of groupMap) {
 // Sort groups by category then normalized key (so similar products cluster together)
 groups.sort((a, b) => a.category.localeCompare(b.category) || a.key.localeCompare(b.key) || a.displayTitle.localeCompare(b.displayTitle));
 
-// Derive sale date ranges per store
-const storeDates = {};
-for (const item of allItems) {
-  if (!storeDates[item.store]) storeDates[item.store] = { min: '', max: '' };
-  const sd = storeDates[item.store];
-  if (item.saleStart && (!sd.min || item.saleStart < sd.min)) sd.min = item.saleStart;
-  if (item.saleEnd && (!sd.max || item.saleEnd > sd.max)) sd.max = item.saleEnd;
-  if (item.saleEnd && (!sd.min || item.saleEnd < sd.min)) sd.min = item.saleEnd;
-}
 
 // Count by store and category (based on groups)
 const storeCounts = {};
@@ -633,12 +624,6 @@ const CAT_ICONS = {
   'Household': '\uD83C\uDFE0',
   'Other': '\uD83D\uDCE6',
 };
-
-function formatDateDisplay(d) {
-  if (!d) return '';
-  const dt = new Date(d + 'T00:00:00');
-  return dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-}
 
 function formatDateShort(d) {
   if (!d) return '';
@@ -769,15 +754,7 @@ ${rowsHTML}
 </div>`;
   }).join('\n');
 
-  // Sale date cards
-  const saleDateHTML = Object.entries(STORES).map(([id, s]) => {
-    const d = storeDates[id] || {};
-    return `<div class="sale-date-card" style="background:${s.color}10;border-color:${s.color}40;color:${s.color}">
-  <div class="sd-name">${s.name}</div>
-  <div class="sd-dates">${d.min ? formatDateDisplay(d.min) : '?'} \u2013 ${d.max ? formatDateDisplay(d.max) : '?'}</div>
-  <div class="sd-count">${storeCounts[id] || 0} specials</div>
-</div>`;
-  }).join('\n');
+  // Sale date cards (removed)
 
   // Store filter buttons
   const storeFilterBtns = Object.entries(STORES).map(([id, s]) =>
@@ -796,10 +773,6 @@ ${rowsHTML}
     `<button data-cat="${esc(c)}">${CAT_ICONS[c] || '\uD83D\uDCE6'} ${esc(c)} (${catCounts[c]})</button>`
   ).join('\n');
 
-  const footerDates = Object.entries(STORES).map(([id, s]) => {
-    const d = storeDates[id] || {};
-    return `${s.name}: ${d.min ? formatDateDisplay(d.min) : '?'} \u2013 ${d.max ? formatDateDisplay(d.max) : '?'}`;
-  }).join(' &middot; ');
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -827,17 +800,6 @@ body {
 .header .sub { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; opacity: 0.7; }
 .header h1 { margin: 4px 0 6px; font-size: 26px; font-weight: 800; }
 .header .tagline { font-size: 12px; opacity: 0.75; }
-
-/* Sale dates */
-.sale-dates { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; justify-content: center; }
-.sale-date-card {
-  flex: 1 1 150px; max-width: 200px; padding: 10px 12px;
-  border-radius: 10px; text-align: center; border: 1.5px solid;
-  font-weight: 600;
-}
-.sd-name { font-size: 12px; font-weight: 700; }
-.sd-dates { font-size: 11px; margin-top: 2px; opacity: 0.85; }
-.sd-count { font-size: 10px; margin-top: 2px; opacity: 0.7; }
 
 /* Disclaimer */
 .disclaimer {
@@ -1073,10 +1035,6 @@ body {
 @media (max-width: 640px) {
   .wrap { padding: 12px 8px; }
   .header h1 { font-size: 20px; }
-  .sale-dates { gap: 4px; }
-  .sale-date-card { min-width: 100px; padding: 8px; }
-  .sd-name { font-size: 10px; }
-  .sd-dates { font-size: 9px; }
   .tbl-head { display: none; }
   .row {
     grid-template-columns: 24px 1fr;
@@ -1094,7 +1052,7 @@ body {
 }
 @media print {
   .cart-btn, .search-wrap, .filters, .cat-filters, .cart-overlay, .cart-panel,
-  .header, .sale-dates, .disclaimer, .kyt-banner, .footer, .search-count { display: none !important; }
+  .header, .disclaimer, .kyt-banner, .footer, .search-count { display: none !important; }
   .cart-panel { position: static; width: 100%; display: flex !important; right: 0 !important; box-shadow: none; }
 }
 </style>
@@ -1106,10 +1064,6 @@ body {
   <div class="sub">Pesach 2026 \u2014 Complete Price Comparison</div>
   <h1>5-Store Specials Comparison</h1>
   <div class="tagline">Bingo \u00B7 Gourmet Glatt \u00B7 NPGS \u00B7 Evergreen \u00B7 Aisle 9 &mdash; Click any multi-store row to expand</div>
-</div>
-
-<div class="sale-dates">
-${saleDateHTML}
 </div>
 
 <div class="disclaimer">
@@ -1150,7 +1104,6 @@ ${categoryTablesHTML}
 
 <div class="footer">
   <strong>\u26A0\uFE0F We are not responsible for any errors or inaccuracies. Always verify prices in-store.</strong><br>
-  ${footerDates}<br>
   \u26A0\uFE0F items show per-unit breakdowns \u00B7 Click rows with multiple stores to compare \u00B7 "\u2014" = not in that store's circular
 </div>
 
