@@ -164,6 +164,7 @@ function normalizeForMatch(title) {
   s = s.replace(/\bdrumstick(?:s)?\b/g, 'leg');
   s = s.replace(/\bsparkling\b/g, 'sparkling');
   s = s.replace(/\bselt?zer\b/g, 'seltzer');
+  s = s.replace(/\blite\b/g, 'light');
   s = s.replace(/\bcutlery\b/g, 'cutlery');
   s = s.replace(/\bfork(?:s)?\b/g, 'cutlery');
   s = s.replace(/\bknive?(?:s)?\b/g, 'cutlery');
@@ -357,6 +358,8 @@ for (const item of allItems) {
 // Pass 1: brand-aware (keeps Carmit vs Alprose separate)
 // Pass 2: merge brandless/store-brand groups into branded groups by product name
 const STORE_BRANDS = new Set(['blupantry', 'blupantrysp', 'blupantrycs', 'blushine', 'blutago', 'bingo', 'evergreen', 'a9', 'plastx', 'plastxforks', 'stmoritz', '']);
+// Words that fundamentally change product identity — prevent subset merging when these are the "extra" words
+const PRODUCT_DIFFERENTIATORS = new Set(['beverage', 'sparkling', 'diet', 'decaf', 'concentrate', 'drink']);
 const groupMap = new Map();
 for (const item of allItems) {
   const normBrand = (item.brand || '').toLowerCase().replace(/[^a-z]/g, '');
@@ -369,7 +372,7 @@ for (const item of allItems) {
 
 // Pass 2: merge store-brand/brandless groups into branded groups with same category+product
 // Uses word-subset matching: if all core words in the store-brand key appear in a branded key, merge
-const SIZE_WORDS = /\b(?:large|small|medium|lg|sm|med|mini|jumbo|lite|light|heavy|duty|extra|premium|fancy|case)\b/g;
+const SIZE_WORDS = /\b(?:large|small|medium|lg|sm|med|mini|jumbo|heavy|duty|extra|premium|fancy)\b/g;
 function coreWords(normTitle) {
   return normTitle.replace(SIZE_WORDS, '').replace(/\b\d+\b/g, '').replace(/\s+/g, ' ').trim().split(' ').filter(Boolean).sort().join(' ');
 }
@@ -403,6 +406,11 @@ for (const sb of storeBrandKeys) {
     const isExact = sbWords.size === bgWords.length && overlap === sbWords.size;
     const isSubset = smaller >= 2 && overlap === smaller && overlap / larger >= 0.6;
     if ((isExact || isSubset) && overlap > bestOverlap) {
+      // Don't merge if the extra words in the larger set are product differentiators
+      const extraWords = sbWords.size > bgWords.length
+        ? [...sbWords].filter(w => !new Set(bgWords).has(w))
+        : bgWords.filter(w => !sbWords.has(w));
+      if (extraWords.some(w => PRODUCT_DIFFERENTIATORS.has(w))) continue;
       bestOverlap = overlap;
       bestMatch = bg;
     }
