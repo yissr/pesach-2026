@@ -25,7 +25,7 @@ function parseScrapedPrice(saleDescription) {
   let m = s.match(/only\s*\$([0-9]+(?:\.[0-9]+)?)/i);
   if (m) return parseFloat(m[1]);
   m = s.match(/(?:buy\s+)?(\d+)\s+(?:units?\s+)?for\s+\$([0-9]+(?:\.[0-9]+)?)/i);
-  if (m) return parseFloat(m[2]) / parseInt(m[1]);
+  if (m) return parseFloat(m[2]) / parseFloat(m[1]);
   m = s.match(/\$([0-9]+(?:\.[0-9]+)?)/);
   if (m) return parseFloat(m[1]);
   return null;
@@ -39,7 +39,7 @@ function parseBingoPrice(priceDescription) {
 }
 
 function formatPrice(p) {
-  if (p == null) return '';
+  if (p == null || !isFinite(p)) return '';
   return '$' + p.toFixed(2);
 }
 
@@ -528,7 +528,8 @@ for (const [key, items] of groupMap) {
     } else {
       // Fallback to flat price only if same unit/size
       const withPrice = entries.filter(e => e.price != null);
-      if (withPrice.length > 1) {
+      const sameSizes = withPrice.length > 1 && withPrice.every(e => e.size && withPrice[0].size && e.size.unit === withPrice[0].size.unit && e.size.amount === withPrice[0].size.amount);
+      if (sameSizes) {
         const sorted = [...withPrice].sort((a, b) => a.price - b.price);
         const diff = (sorted[1].price - sorted[0].price) / sorted[0].price;
         if (diff > 0.02) winner = sorted[0].store;
@@ -777,8 +778,8 @@ ${rowsHTML}
     `<button data-winner="${id}" style="color:${s.color};border-color:${s.color}40">${s.badge} cheapest</button>`
   ).join('\n');
 
-  // Category filter buttons
-  const catFilterBtns = categories.map(c =>
+  // Category filter buttons (sorted alphabetically even though sections are shuffled)
+  const catFilterBtns = [...categories].sort().map(c =>
     `<button data-cat="${esc(c)}">${CAT_ICONS[c] || '\uD83D\uDCE6'} ${esc(c)} (${catCounts[c]})</button>`
   ).join('\n');
 
@@ -1280,7 +1281,8 @@ function doFilter() {
   searchCount.textContent = (q || activeStore !== 'all' || activeCat !== 'all' || activeWinner !== 'all') ? visible + ' items shown' : '';
 }
 
-searchInput.addEventListener('input', doFilter);
+let _filterTimer;
+searchInput.addEventListener('input', () => { clearTimeout(_filterTimer); _filterTimer = setTimeout(doFilter, 120); });
 clearBtn.addEventListener('click', () => { searchInput.value = ''; doFilter(); searchInput.focus(); });
 
 // Store filters

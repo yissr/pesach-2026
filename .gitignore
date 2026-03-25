@@ -16,5 +16,8 @@ dedup-gg.js
 convert-*.js
 extract-bingo.js
 
+# Environment/secrets
+.env*
+
 # Generated output (built by Cloudflare)
 index.html
