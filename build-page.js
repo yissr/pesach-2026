@@ -611,7 +611,12 @@ for (const g of groups) {
   catCounts[g.category] = (catCounts[g.category] || 0) + 1;
 }
 
-const categories = [...new Set(groups.map(g => g.category))].sort();
+const categories = [...new Set(groups.map(g => g.category))];
+// Shuffle categories so sections appear in random order each build
+for (let i = categories.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [categories[i], categories[j]] = [categories[j], categories[i]];
+}
 
 const CAT_ICONS = {
   'Matzah': '\uD83E\uDED3',
