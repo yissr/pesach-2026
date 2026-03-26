@@ -469,7 +469,9 @@ for (const [key, items] of groupMap) {
       perUnitDisplay = (item.perUnit * 100).toFixed(1) + '\u00A2/oz';
     } else if (item.price != null && isCount && item.size.amount > 0) {
       const perEach = item.price / item.size.amount;
-      perUnitDisplay = '$' + perEach.toFixed(2) + '/ea';
+      perUnitDisplay = perEach < 0.01
+        ? (perEach * 100).toFixed(1) + '\u00A2/ea'
+        : '$' + perEach.toFixed(2) + '/ea';
     }
 
     return {
@@ -548,12 +550,15 @@ for (const [key, items] of groupMap) {
     if (weightEntries.length >= 2) {
       const sorted = [...weightEntries].sort((a, b) => a.perUnit - b.perUnit);
       const parts = sorted.map(e => STORES[e.store].badge + ' ' + (e.perUnit * 100).toFixed(1) + '\u00A2/oz');
-      const isTie = sorted[0].perUnit === sorted[1].perUnit;
+      const isTie = sorted[0].perUnit === 0 || (sorted[1].perUnit - sorted[0].perUnit) / sorted[0].perUnit <= 0.02;
       compNote = parts.join(' vs ') + (isTie ? ' \u2014 tie' : ' \u2014 ' + STORES[sorted[0].store].badge + ' wins');
     } else if (countEntries.length >= 2) {
       const sorted = [...countEntries].sort((a, b) => (a.price / a.size.amount) - (b.price / b.size.amount));
-      const parts = sorted.map(e => STORES[e.store].badge + ' $' + (e.price / e.size.amount).toFixed(2) + '/ea');
-      const isTie = (sorted[0].price / sorted[0].size.amount) === (sorted[1].price / sorted[1].size.amount);
+      const perEachFmt = v => v < 0.01 ? (v * 100).toFixed(1) + '\u00A2/ea' : '$' + v.toFixed(2) + '/ea';
+      const parts = sorted.map(e => STORES[e.store].badge + ' ' + perEachFmt(e.price / e.size.amount));
+      const lo = sorted[0].price / sorted[0].size.amount;
+      const hi = sorted[1].price / sorted[1].size.amount;
+      const isTie = lo === 0 || (hi - lo) / lo <= 0.02;
       compNote = parts.join(' vs ') + (isTie ? ' \u2014 tie' : ' \u2014 ' + STORES[sorted[0].store].badge + ' wins');
     }
   }

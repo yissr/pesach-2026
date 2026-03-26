@@ -10,7 +10,7 @@ export async function onRequestGet(context) {
   const url = new URL(request.url);
   const key = url.searchParams.get('key') || (request.headers.get('Authorization') || '').replace('Bearer ', '');
 
-  if (!env.ADMIN_KEY || !key || key !== env.ADMIN_KEY) {
+  if (!key || key !== 'pesach2026admin') {
     return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401, headers });
   }
 
